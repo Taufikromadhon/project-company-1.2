@@ -1,0 +1,88 @@
+{
+    "name": "Client",
+    "options": {
+      "idInjection": true,
+      "mysql": {
+        "schema": "loopback-example-mysql",
+        "table": "client"
+      }
+    },
+    "properties": {
+      "id": {
+        "type": "Number",
+        "required": true,
+        "length": 10,
+        "precision": 10,
+        "scale": 0, 
+        "mysql": {
+          "columnName": "id",
+          "dataType": "int",
+          "dataLength": 10,
+          "dataPrecision": 10,
+          "dataScale": 0,
+          "nullable": "N"
+        }
+      },
+      "name_client": {
+        "type": "String",
+        "required": true,
+        "length": 100,
+        "precision": 10,
+        "scale": 0,
+        "mysql": {
+          "columnName": "name_client",
+          "dataType": "varchar",
+          "dataLength": 100,
+          "dataPrecision": 10,
+          "dataScale": 0,
+          "nullable": "N"
+        }
+      },
+      "name_project": {
+        "type": "String",
+        "required": true,
+        "length": 100,
+        "precision": 10,
+        "scale": 0,
+        "mysql": {
+          "columnName": "name_project",
+          "dataType": "varchar",
+          "dataLength": 100,
+          "dataPrecision": 10,
+          "dataScale": 0,
+          "nullable": "N"
+        }
+      },
+      "status_project": {
+        "type": "String",
+        "required": true,
+        "length": 100,
+        "precision": 10,
+        "scale": 0,
+        "mysql": {
+          "columnName": "status_project",
+          "dataType": "varchar",
+          "dataLength": 100,
+          "dataPrecision": 10,
+          "dataScale": 0,
+          "nullable": "N"
+        }
+      },
+      
+      "perusahaan": {
+        "type": "String",
+        "required": true,
+        "length": 100,
+        "precision": 10,
+        "scale": 0,
+        "mysql": {
+          "columnName": "perusahaan",
+          "dataType": "varchar",
+          "dataLength": 100,
+          "dataPrecision": 10,
+          "dataScale": 0,
+          "nullable": "N"
+        }
+      }
+    }
+  }

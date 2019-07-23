@@ -33,7 +33,19 @@
     "public": false
   },
   "Account": {
-    "dataSource": "accountDS",
+    "dataSource": "mysql",
     "public": true
+  },
+  "Employee": {
+    "dataSource" : "mysql",
+    "public" : true
+  },
+  "Client": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Report": {
+    "dataSource" : "mysql",
+    "public" : true
   }
 }

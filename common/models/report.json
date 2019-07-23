@@ -1,0 +1,88 @@
+{
+    "name": "Report",
+    "options": {
+      "idInjection": true,
+      "mysql": {
+        "schema": "loopback-example-mysql",
+        "table": "report"
+      }
+    },
+    "properties": {
+      "id": {
+        "type": "Number",
+        "required": true,
+        "length": 10,
+        "precision": 10,
+        "scale": 0, 
+        "mysql": {
+          "columnName": "id",
+          "dataType": "int",
+          "dataLength": 10,
+          "dataPrecision": 10,
+          "dataScale": 0,
+          "nullable": "N"
+        }
+      },
+      "name_report": {
+        "type": "String",
+        "required": true,
+        "length": 100,
+        "precision": 10,
+        "scale": 0,
+        "mysql": {
+          "columnName": "name_report",
+          "dataType": "varchar",
+          "dataLength": 100,
+          "dataPrecision": 10,
+          "dataScale": 0,
+          "nullable": "N"
+        }
+      },
+      "project": {
+        "type": "String",
+        "required": true,
+        "length": 100,
+        "precision": 10,
+        "scale": 0,
+        "mysql": {
+          "columnName": "project",
+          "dataType": "varchar",
+          "dataLength": 100,
+          "dataPrecision": 10,
+          "dataScale": 0,
+          "nullable": "N"
+        }
+      },
+      "divisi": {
+        "type": "String",
+        "required": true,
+        "length": 100,
+        "precision": 10,
+        "scale": 0,
+        "mysql": {
+          "columnName": "divisi",
+          "dataType": "varchar",
+          "dataLength": 100,
+          "dataPrecision": 10,
+          "dataScale": 0,
+          "nullable": "N"
+        }
+      },
+      
+      "isi_report": {
+        "type": "String",
+        "required": true,
+        "length": 100,
+        "precision": 10,
+        "scale": 0,
+        "mysql": {
+          "columnName": "isi_report",
+          "dataType": "varchar",
+          "dataLength": 100,
+          "dataPrecision": 10,
+          "dataScale": 0,
+          "nullable": "N"
+        }
+      }
+    }
+  }
