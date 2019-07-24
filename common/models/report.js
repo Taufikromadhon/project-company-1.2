@@ -3,45 +3,64 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-module.exports = function(Report) {
+
+var app = require('../../server/server')
+module.exports = function(Report){
     Report.remoteMethod(
-        'getNameReport',
+        'getById',
         {
-            description: 'get name report like -> Report 1',
+            description: 'get id like -> Number',
             accepts: [
-                { arg: 'namereport', type: 'string'}
+                { arg: 'id', type: 'string'}
             ],
             returns:{
                 arg: 'res', type:'object', root: true
             },
-            http: { path: '/getNameReport', verb: 'get' }
+            http: { path: '/getById', verb: 'get' }
         }
     );
 
-    Report.getNameReport = function(namereport, callback){
+    
+    Report.getById = function(id, callback){
         new Promise(function(resolve, reject){
             var filter = {
                 where: {
-                    name_report : {
-                        like : namereport
+                    id : {
+                        like : id
                     }
                 }
             }
             Report.find(filter, function(err, result){
                 if(err) reject (err)
                 if(result === null){
-                    err = new Error ("Nama Report Tidak Dapat Ditemukan")
+                    err = new Error ("Id Tidak Dapat Ditemukan")
                     err.statusCode = 404
                     reject (err)
                 }
                 resolve(result)
             })
         }).then(function(res){
-            if (!res) callback (err)
-            return callback (null, res)
+            var client = app.models.Client
+            var clientId = res[0].clientId
+            var filter ={
+                where : {
+                    id : clientId
+                }
+            }
+            client.find(filter, function(err, resclient){
+                if(err) return (err)
+                if(resclient === null){
+                    err = new Error('Cannot find that name')
+                    err.statusCode = 404
+                    return(err)
+                }
+
+                res[0].client =resclient[0]
+                return callback(null,res)
+            })
         }).catch(function(err){
             callback(err);
-        });
+        })
     }
+}
 
-};
